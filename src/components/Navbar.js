@@ -1,70 +1,62 @@
-import React, { useState, useEffect } from 'react';
-import { Link } from 'react-router-dom';
-import './Navbar.css';
+import React, { useState } from "react";
+import { Container, LogoContainer, Wrapper, Menu, MenuItem, MenuItemLink, MobileIcon } from "./Narbar.elements";
+import { FaBars, FaTimes } from "react-icons/fa";
+import { IconContext } from "react-icons";
 
-function Navbar() {
-  const [click, setClick] = useState(false);
-  const [button, setButton] = useState(true);
-
-  const handleClick = () => setClick(!click);
-  const closeMobileMenu = () => setClick(false);
-
-  const showButton = () => {
-    if (window.innerWidth <= 834) {
-      setButton(false);
-    } else {
-      setButton(true);
-    }
-  };
-
-  useEffect(() => {
-    showButton();
-  }, []);
-
-  window.addEventListener('resize', showButton);
+const Navbar = () => {
+  const [showMobileMenu, setShowMobileMenu] = useState(false);
 
   return (
-    <div>
-      <nav className='navbar'>
-        <div className='navbar-container'>
-          <Link to='/' className='navbar-logo' onClick={closeMobileMenu}>
-            <img src="/images/triada-logo.png" alt="Cetav Logo"></img>
-            <p>Bolsa de empleo</p>
-          </Link>
+    <Container>
+      <Wrapper>
+        <IconContext.Provider value={{ style: { fontSize: "2em" } }}>
+          <LogoContainer>
+            <img src="./img/triada-logo.png"/>
+            <p>Bolsa de empleo</p>  
+          </LogoContainer>
 
-          <div className='menu-icon' onClick={handleClick}>
-            <i className={click ? 'fas fa-times' : 'fas fa-bars'} />
-          </div>
-          <ul className={click ? 'nav-menu active' : 'nav-menu'}>
-            <li className='nav-item'>
-              <Link to='/' className='nav-links' onClick={closeMobileMenu}>
-                <img src="/images/home.png" alt="Home Logo"></img>
-                Inicio
-              </Link>
-            </li>
-            <li className='nav-item'>
-              <Link
-                className='nav-links'
-                onClick={closeMobileMenu}
-              >
-                <img src="/images/card_travel.png" alt="Jobs Logo"></img>
-                Puestos Disponibles
-              </Link>
-            </li>
-            <li className='nav-item'>
-              <Link
-                className='nav-links'
-                onClick={closeMobileMenu}
-              >
-                <img src="/images/ic_baseline-post-add.png" alt="Jobs Logo"></img>
-                Publicar Puestos
-              </Link>
-            </li>
-          </ul>
-        </div>
-      </nav>
-    </div>
+          <MobileIcon onClick={() => setShowMobileMenu(!showMobileMenu)}>
+            {showMobileMenu ? <FaTimes /> : <FaBars />}
+          </MobileIcon>
+
+          <Menu open={showMobileMenu}>
+            <MenuItem>
+              <MenuItemLink onClick={() => setShowMobileMenu(!showMobileMenu)}>
+                <img src="./img/home.png"/>
+                <div>
+                  Inicio
+                </div>
+              </MenuItemLink>
+            </MenuItem>
+            <MenuItem>
+              <MenuItemLink onClick={() => setShowMobileMenu(!showMobileMenu)}>
+                <img src="./img/ic_baseline-post-add.png"/>
+                <div>
+                  Publicar Oferta
+                </div>
+              </MenuItemLink>
+            </MenuItem>
+            <MenuItem>
+              <MenuItemLink onClick={() => setShowMobileMenu(!showMobileMenu)}>
+                <img src="./img/card_travel.png"/>
+                <div>
+                  Ofertas Laborales
+                </div>
+              </MenuItemLink>
+            </MenuItem>
+            <MenuItem>
+              <MenuItemLink onClick={() => setShowMobileMenu(!showMobileMenu)}>
+                <img src="./img/home.png"/>
+                <div>
+                  Cetav Principal
+                </div>
+              </MenuItemLink>
+            </MenuItem>
+          </Menu>
+        </IconContext.Provider>
+      </Wrapper>
+    </Container>
   );
-}
+};
 
 export default Navbar;

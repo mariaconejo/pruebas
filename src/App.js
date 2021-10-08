@@ -5,15 +5,16 @@ import Form from './components/Form';
 import Footer from './components/Footer';
 import Filter from './components/Filter';
 import Cards from './components/Cards';
-
+import Navbar from './components/Navbar';
 
 function App() {
   return (
     <div>
-      <Suscriber />
+      <Navbar />
       <Form />
       <Cards name="Desarrollo Web"></Cards>
       <Filter />
+      <Suscriber />
       <Footer />
 
     </div>

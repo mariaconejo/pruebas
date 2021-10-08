@@ -7,7 +7,7 @@ function Cards() {
     useEffect(() => {
         axios.get(`https://api.airtable.com/v0/appDz13O7ugHyw4mH/jobs?api_key=keyVGKRZEPpRENeUv`)
             .then(res => {
-                setPost(res.data.records[5].fields)
+                setPost(res.data.records[3].fields)
             })
             .catch(err => {
                 console.log(err)
