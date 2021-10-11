@@ -4,8 +4,9 @@ import axios from 'axios'
 
 function Cards() {
     const [post, setPost] = useState([])
+    const {airtableKey} = process.env;
     useEffect(() => {
-        axios.get(`https://api.airtable.com/v0/appDz13O7ugHyw4mH/jobs?api_key=keyVGKRZEPpRENeUv`)
+        axios.get(`https://api.airtable.com/v0/appDz13O7ugHyw4mH/jobs?api_key=${airtableKey}`)
             .then(res => {
                 setPost(res.data.records)
             })
