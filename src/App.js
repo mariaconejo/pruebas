@@ -15,7 +15,7 @@ function App() {
   const [postsPerPage] = useState(2)
 
   const [posts, setPost] = useState([])
-  const REACT_APP_SPACE_ID = process.env;
+  const {REACT_APP_SPACE_ID} = process.env;
   useEffect(() => {
       axios.get(`https://api.airtable.com/v0/appDz13O7ugHyw4mH/jobs?api_key=${REACT_APP_SPACE_ID}`)
           .then(res => {
