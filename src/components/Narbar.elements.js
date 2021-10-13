@@ -56,6 +56,9 @@ export const Menu = styled.ul`
 `;
 
 export const MenuItem = styled.li`
+  font-family: 'Poppins', sans-serif;
+  font-size: 1.375rem;
+  font-weight: 500;
   height: 100%;
   img{
     display: none;

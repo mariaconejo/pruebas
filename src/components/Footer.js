@@ -1,12 +1,14 @@
 import React from 'react';
 import styled from 'styled-components';
+import triada from '../img/triada.png';
+import facebook from '../img/facebook.svg';
 
-function Footer (){
+function footer (){
     return(
         <Backrogund>
             <Container>
                 <Content>
-                    <SecondaryLogo src="img/logo-triada.png"/>
+                    <SecondaryLogo src={triada}/>
                     <FooterOptions>
                         <ul>
                             <li><a href ="#">Inicio</a></li>
@@ -15,7 +17,7 @@ function Footer (){
                         </ul>
                     </FooterOptions>
                     <FooterLogo>
-                        <a href =""><img src="img/facebook-logo.svg" alt=""></img></a>
+                        <a href ="#"><img src={facebook} alt="Facebook"></img></a>
                         <p>© CETAV Bolsa de empleos | 2021</p>
                     </FooterLogo>
                 </Content>
@@ -24,11 +26,11 @@ function Footer (){
     )
 }
 
-export default Footer
+export default footer
 
 const Backrogund = styled.div`
     width:100%;
-    background: black;
+    background: #292929;
     height: auto;
 `
 
@@ -62,14 +64,12 @@ const FooterOptions = styled.div`
     font-size: 18px;
     width:100%;
     ul{
-        list-style:none
+        list-style:none;
+        margin-bottom : 24px;
     }
     li{
         border-bottom: 1px solid #ECECEC;
         padding: 16px 0px;
-    }
-    a:last-of-type{
-        margin-bottom : 24px;
     }
     img{
         margin: 0 auto;

@@ -2,6 +2,10 @@ import React, { useState } from "react";
 import { Container, LogoContainer, Wrapper, Menu, MenuItem, MenuItemLink, MobileIcon } from "./Narbar.elements";
 import { FaBars, FaTimes } from "react-icons/fa";
 import { IconContext } from "react-icons";
+import cetav from '../img/cetav.png';
+import home from '../img/home.png';
+import post from '../img/post.png';
+import card from '../img/card.png';
 
 const Navbar = () => {
   const [showMobileMenu, setShowMobileMenu] = useState(false);
@@ -11,7 +15,7 @@ const Navbar = () => {
       <Wrapper>
         <IconContext.Provider value={{ style: { fontSize: "2em" } }}>
           <LogoContainer>
-            <img src="./img/triada-logo.png"/>
+            <a href="http://parquelalibertad.org/cetav/home"><img src={cetav} alt="Logo cetav"/></a>
             <p>Bolsa de empleo</p>  
           </LogoContainer>
 
@@ -22,7 +26,7 @@ const Navbar = () => {
           <Menu open={showMobileMenu}>
             <MenuItem>
               <MenuItemLink onClick={() => setShowMobileMenu(!showMobileMenu)}>
-                <img src="./img/home.png"/>
+                <img src={home} alt="Home"/>
                 <div>
                   Inicio
                 </div>
@@ -30,7 +34,7 @@ const Navbar = () => {
             </MenuItem>
             <MenuItem>
               <MenuItemLink onClick={() => setShowMobileMenu(!showMobileMenu)}>
-                <img src="./img/ic_baseline-post-add.png"/>
+                <img src={post} alt="Post"/>
                 <div>
                   Publicar Oferta
                 </div>
@@ -38,17 +42,9 @@ const Navbar = () => {
             </MenuItem>
             <MenuItem>
               <MenuItemLink onClick={() => setShowMobileMenu(!showMobileMenu)}>
-                <img src="./img/card_travel.png"/>
+                <img src={card} alt="Card"/>
                 <div>
                   Ofertas Laborales
-                </div>
-              </MenuItemLink>
-            </MenuItem>
-            <MenuItem>
-              <MenuItemLink onClick={() => setShowMobileMenu(!showMobileMenu)}>
-                <img src="./img/home.png"/>
-                <div>
-                  Cetav Principal
                 </div>
               </MenuItemLink>
             </MenuItem>

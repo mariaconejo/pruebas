@@ -4,10 +4,10 @@
 
 *{
   box-sizing: border-box;
-  font-family:Arial, Helvetica, sans-serif;
-  color: white;
+  font-family: 'Poppins', sans-serif;
   margin: 0;
   padding: 0;
+  color: white;
 }
 
 a{
