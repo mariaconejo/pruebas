@@ -1,19 +1,21 @@
-import logo from './logo.svg';
-import './App.css';
 import Suscriber from './components/Suscriber';
-import Form from './components/Form';
 import Footer from './components/Footer';
-import Filter from './components/Filter';
-import Cards from './components/Cards';
 import Navbar from './components/Navbar';
-import Hero from './components/Hero';
+import {Hero} from './components/Hero';
+import Cards from './components/Cards'
+import MyProvider from './aplication/provider';
+import Banner from './components/Banner'
 
 function App() {
   return (
     <div>
       <Navbar />
-      <Hero name="Bienvenidos" />
+      <Hero  />
+      <MyProvider value = "Filtrar por tecnico">
+        <Cards />
+      </MyProvider>
       <Suscriber />
+      <Banner />
       <Footer />
     </div>
   );
