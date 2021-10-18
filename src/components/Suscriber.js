@@ -100,10 +100,12 @@ const Button = styled.input`
     border:none;
     margin-left: 188px;
     margin-top: 20px;
+    margin-bottom: 20px;
     @media(min-width:834px){
         margin-left: 0;
         margin-top: 0;
         padding: 12px 16px 12px 16px;
+        margin-bottom: 0;
     }
 `
 const Error = styled.div`

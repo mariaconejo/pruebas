@@ -39,6 +39,7 @@ const Flex = styled.div`
 const Background = styled.div`
     background: #5755CC;
     width:100%;
+    margin-bottom: 50px;
 
 `
 const Title = styled.h2`
@@ -73,8 +74,9 @@ const Image = styled.img`
     
 `
 const Logo = styled.img`
-    width: 100%;
-    padding-top:48px;
+    padding-left: 62px;
+    max-width: 100%;
+    height: auto;
     @media(min-width:834px){
         width: 30%;
         padding-top:0;

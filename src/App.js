@@ -4,13 +4,15 @@ import Navbar from './components/Navbar';
 import {Hero} from './components/Hero';
 import Cards from './components/Cards'
 import MyProvider from './aplication/provider';
-import Banner from './components/Banner'
+import Banner from './components/Banner';
+import PostOffer from './components/PostOffer';
 
 function App() {
   return (
     <div>
       <Navbar />
       <Hero  />
+      <PostOffer />
       <MyProvider value = "Filtrar por tecnico">
         <Cards />
       </MyProvider>
