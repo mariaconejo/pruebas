@@ -1,5 +1,5 @@
 import React from "react";
-import styled, { StyledComponent } from 'styled-components';
+import styled from 'styled-components';
 import { Wrapper } from "./Hero";
 
 
@@ -11,8 +11,8 @@ function Banner(){
         logo:"img/logo.png"
     }
     return(
-        <Background>
-            <Wrapper>
+        <Wrapper>
+            <Background>
                 <Flex>
                     <Paragraphs>
                         <Title>{info.title}</Title>
@@ -22,9 +22,8 @@ function Banner(){
                         <Image src={info.banner} alt="Banner" />
                     </Container>
                 </Flex>
-                <Logo src={info.logo} alt="Logo del cetav" />
-            </Wrapper>
-        </Background>
+            </Background>
+        </Wrapper>
     );
 }
 
@@ -39,7 +38,7 @@ const Flex = styled.div`
 const Background = styled.div`
     background: #5755CC;
     width:100%;
-    margin-bottom: 50px;
+    margin-bottom: 48px;
 
 `
 const Title = styled.h2`
@@ -72,15 +71,6 @@ const Container = styled.div`
 const Image = styled.img`
     width: 100%;
     
-`
-const Logo = styled.img`
-    padding-left: 62px;
-    max-width: 100%;
-    height: auto;
-    @media(min-width:834px){
-        width: 30%;
-        padding-top:0;
-    }
 `
 const Paragraphs = styled.div`
     @media(min-width:834px){

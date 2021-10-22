@@ -1,8 +1,5 @@
 import React from "react";
-import styled, { StyledComponent } from 'styled-components';
-
-
-
+import styled from 'styled-components';
 
 function Hero(){
     const info ={
@@ -21,7 +18,6 @@ function Hero(){
             </Wrapper>
         </Background>
     )
-
 }
 
 const Background = styled.div`

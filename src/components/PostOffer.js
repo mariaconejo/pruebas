@@ -1,14 +1,26 @@
 import React from "react";
 import styled from "styled-components";
 import ArrowForwardIosIcon from '@material-ui/icons/ArrowForwardIos';
+import { useHistory } from 'react-router-dom';
 
-function PostOffer() {
+
+function PostOffer(props) {
+
+    let history = useHistory();
+
+    const redirect = () => {
+        history.push("../pages/Publicar")
+    }
+
     return (
         <WrapperPost>
             <ButtonWrapper>
                 <AnchorWrapper>
+                    {/* <button onClick ={redirect}>
+                        Click me!
+                    </button> */}
                     <AnchorPostOffer>
-                        <Link href="#">Publicar Oferta Laboral</Link>
+                        <a href="../pages/Publicar">Publicar Oferta Laboral</a>
                     </AnchorPostOffer>
                     <ArrowIcon />
                 </AnchorWrapper>
@@ -19,30 +31,29 @@ function PostOffer() {
 
 export default PostOffer
 
-const Link = styled.a`
-    font-family: 'Poppins', sans-serif;
-    font-weight: bold;
-    font-size: 1.375rem;
-`
-
 const WrapperPost = styled.div`
-    margin-top:40px;
+
 `
 
 const ButtonWrapper = styled.div`
     width: 343px;
     margin: 0 auto;
     display: flex;
+    margin-top: 36px;
+
     @media (min-width: 834px) {
         width: 770px;
     }
+
     @media (min-width: 1440px) {
         display: none;
     }
 `
 
 const AnchorPostOffer = styled.div`
-    
+    a{
+        color:white;
+    }
 `
 
 const ArrowIcon = styled(ArrowForwardIosIcon)`
@@ -58,12 +69,14 @@ const AnchorWrapper = styled.div`
     align-items: center;
     justify-content: space-between;
     width: 100%;
+
     a{
         color: #ffffff;
         text-decoration: none;
         font-weight: medium;
         font-size: 22px;
     }
+
     @media (min-width: 834px) {
         width: 100%;
     }

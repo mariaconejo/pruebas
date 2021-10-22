@@ -1,26 +1,19 @@
-import Suscriber from './components/Suscriber';
-import Footer from './components/Footer';
-import Navbar from './components/Navbar';
-import {Hero} from './components/Hero';
-import Cards from './components/Cards'
-import MyProvider from './aplication/provider';
-import Banner from './components/Banner';
-import PostOffer from './components/PostOffer';
+
+import Home from "./pages/Home";
+import Ofertas from "./pages/Ofertas";
+import Publicar from "./pages/Publicar";
+import Detalle from "./pages/Detalle";
+
 
 function App() {
   return (
-    <div>
-      <Navbar />
-      <Hero  />
-      <PostOffer />
-      <MyProvider value = "Filtrar por tecnico">
-        <Cards />
-      </MyProvider>
-      <Suscriber />
-      <Banner />
-      <Footer />
+    <div className="App">
+      <Home />
+      {/* <Ofertas />
+      <Publicar />
+      <Detalle /> */}
     </div>
-  );
-}
+  )}
+
 
 export default App;
