@@ -1,22 +1,21 @@
 import React from "react";
-// import Navbar from '../components/Navbar'
-import Cards from "../components/Cards";
+import Navbar from "../components/Navbar";
+import CardsOffer from "../components/CardsOffer";
 import Footer from "../components/Footer";
-import Filter from "../components/Filter";
-import MyProvider from "../aplication/provider"
-import Banner from "../components/Banner";
+import MyProvider from "../aplication/provider";
+import Suscriber from "../components/Suscriber";
 
 function Ofertas() {
-    return (
-        <div>
-            {/* <Navbar /> */}
-            <MyProvider value = "Filtrar por tecnico">
-                <Filter />
-                <Cards />
-            </MyProvider>
-            <Banner />
-            <Footer />
-        </div>
-    )}
+  return (
+    <div>
+      <Navbar />
+      <MyProvider value="Filtrar por tecnico">
+        <CardsOffer />
+      </MyProvider>
+      <Suscriber />
+      <Footer />
+    </div>
+  );
+}
 
 export default Ofertas;

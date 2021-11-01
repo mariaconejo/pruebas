@@ -1,13 +1,13 @@
 import React from "react";
-// import Navbar from '../components/Navbar
-import Footer from "../components/Footer";
-import Jobsview from "../components/Jobsview";
+import Navbar from "./Navbar"
+import Footer from "./Footer";
+import Jobsview from "./Jobsview";
 
 
 function Detalle() {
     return (
         <div>
-            {/* <Navbar /> */}
+            <Navbar />
             <Jobsview />
             <Footer />
         </div>

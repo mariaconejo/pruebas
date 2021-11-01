@@ -1,75 +1,63 @@
 import React from "react";
-import styled from 'styled-components';
+import styled from "styled-components";
 
-function Hero(){
-    const info ={
-        name: "Bienvenidos",
-        hero:"img/hero.svg"
-    };
-    return(
-        <Background>
-            <Wrapper>
-                <Flex> 
-                    <Welcome>{info.name}</Welcome>
-                    <Container>
-                        <Image src={info.hero} alt="hero_muñecos" />
-                    </Container>
-                </Flex>
-            </Wrapper>
-        </Background>
-    )
+function Hero() {
+  const info = {
+    name: "Bienvenidos",
+    hero: "img/hero.svg",
+  };
+  return (
+    <Background>
+      <Wrapper>
+        <Flex>
+          <Welcome>{info.name}</Welcome>
+          <Image src={info.hero} alt="hero_muñecos" />
+        </Flex>
+      </Wrapper>
+    </Background>
+  );
 }
 
 const Background = styled.div`
-    background-color: #E1ECF4;
-    width:100%;
-`
+  background-color: #e1ecf4;
+  width: 100%;
+`;
 
 const Wrapper = styled.div`
-    width: 91.5%;
-    margin: 0 auto;
-    @media(min-width:834px){
-        width:92%;
-    }
-    @media(min-width:1440px){
-        width:72%;
-    }
-
-`
+  width: 343px;
+  margin: 0 auto;
+  @media (min-width: 834px) {
+    width: 770px;
+  }
+  @media (min-width: 1440px) {
+    width: 1040px;
+  }
+`;
 
 const Welcome = styled.p`
-    color:#292929;
-    display: inline-block;
-    font-family: 'Poppins', sans-serif;
-    font-size: 1.375rem;
-    font-weight: 500;
-    position:absolute;
-    z-index: 1;
-    @media(min-width:834px){
-        font-size: 1.625rem;
-    }
-    @media(min-width:1440px){
-        font-size: 2.313rem;
-    }
-`
+  color: #5e5e5e;
+  display: inline-block;
+  font-family: "Poppins", sans-serif;
+  font-size: 1.375rem;
+  font-weight: 500;
+  @media (min-width: 834px) {
+    font-size: 2.313rem;
+    font-weight: 700;
+  }
+  @media (min-width: 1440px) {
+    font-size: 4.125rem;
+  }
+`;
 const Image = styled.img`
-    width: 100%;
-`
-const Container = styled.div`
-    width:100%;
-    padding-left: 175px;
-    padding-top: 45px;
-    @media(min-width:834px){
-        padding-left: 388px;
-    }
-    @media(min-width:1440px){
-        padding-left: 527px;
-    }
-`
+  width: 50%;
+  max-width: 100%;
+  height: auto;
+`;
 const Flex = styled.div`
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-`
-export {Hero, Wrapper} ;
+  padding: 48px 0px 48px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+`;
 
+export { Hero, Wrapper };

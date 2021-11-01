@@ -1,19 +1,29 @@
-
+import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import Home from "./pages/Home";
 import Ofertas from "./pages/Ofertas";
-import Publicar from "./pages/Publicar";
-import Detalle from "./pages/Detalle";
-
+import ErrorPage from "./pages/Error404";
+import JobsPage from "./pages/Jobspage";
 
 function App() {
   return (
     <div className="App">
-      <Home />
-      {/* <Ofertas />
-      <Publicar />
-      <Detalle /> */}
+      <Router>
+        <Switch>
+          <Route exact path="/">
+            <Home />
+          </Route>
+          <Route exact path="/ofertas">
+            <Ofertas />
+          </Route>
+          <Route exact path="/jobsview/:id" children={<JobsPage/>}/>
+          <Route exact path="/ofertas/:id" children={<JobsPage/>}/>
+          <Route path="*">
+            <ErrorPage />
+          </Route>
+        </Switch>
+      </Router>
     </div>
-  )}
-
+  );
+}
 
 export default App;
